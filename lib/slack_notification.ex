@@ -27,7 +27,7 @@ defmodule SlackNotification do
         %{
           color: @color[level] || "#f00",
           ts: DateTime.utc_now() |> DateTime.to_unix(),
-          fields: Enum.map(context, fn {k, v} -> %{title: k, value: inspect(v)} end)
+          fields: Enum.map(context, fn {k, v} -> %{title: k, value: inspect(v, pretty: true)} end)
         }
       ]
     }
